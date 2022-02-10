@@ -1,0 +1,64 @@
+<div class="w-screen h-screen bg-black-1 bg-opacity-50 top-0 fixed md:p-12">
+
+  <div class="h-full font-mulish text-black-1 bg-white rounded-2xl py-12 px-3.5 md:p-24 animate__animated animate__fadeIn animate__faster relative flex flex-col justify-between">
+
+    <span
+      class="material-icons absolute top-5 right-5 text-orange-1 cursor-pointer"
+      (click)="closeFilter()">close
+    </span>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 rounded-2xl relative">
+
+      <div class="flex flex-col relative h-14">
+        <label class="absolute top-0 z-10 px-3 pt-1 text-xs font-extrabold">LOCATION</label>
+        <input type="text" placeholder="Add location" [ngModel]="selectedCity" class="input-style text-sm rounded-l-2xl">
+      </div>
+      <div class="flex flex-col relative">
+        <label class="absolute top-0 z-10 px-3 pt-1 text-xs font-extrabold">GUESTS</label>
+        <input type="text" readonly [ngModel]="totalGuests" class="input-style text-sm">
+      </div>
+      <div class="shadow-3xl rounded-r-2xl flex justify-center items-center text-white hidden md:flex">
+        <button class="bg-orange-1 flex items-center px-6 py-4 rounded-2xl" (click)="searchStays()">
+          <span class="material-icons cursor-pointer">search</span>
+          <span>Search</span>
+        </button>
+      </div>
+
+      <ul>
+        <li
+          *ngFor="let city of cities"
+          class="mt-6 flex items-center gap-2 p-2 text-black-2 cursor-pointer hover:bg-gray-2"
+          (click)="selectCity(city)"
+        >
+          <span class="material-icons">location_on</span>{{city}}
+        </li>
+      </ul>
+
+      <div class="flex flex-col justify-around">
+
+        <app-counter
+          title="Adults"
+          subTitle="Ages 13 or above"
+          [disabledButtons]="disabledButtonsCounter"
+        ></app-counter>
+
+        <app-counter
+          title='Children'
+          subTitle='Ages 2 - 12'
+          [disabledButtons]="disabledButtonsCounter"
+        ></app-counter>
+
+      </div>
+
+    </div>
+
+    <div class="w-full flex justify-center text-white md:hidden">
+      <button class="bg-orange-1 flex items-center px-6 py-4 rounded-2xl" (click)="searchStays()">
+        <span class="material-icons cursor-pointer">search</span>
+        <span>Search</span>
+      </button>
+    </div>
+
+  </div>
+
+</div>

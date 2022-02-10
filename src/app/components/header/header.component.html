@@ -1,0 +1,16 @@
+<div class="flex flex-col items-center md:flex-row md:justify-between mb-14">
+
+  <div class="flex items-center text-orange-1 mb-5 md:mb-0 cursor-pointer">
+    <span class="material-icons">change_history</span>
+    <a href="/" class="font-['poppins']">windbnb</a>
+  </div>
+
+  <div class="grid grid-cols-3 divide-x rounded-2xl shadow-3xl text-center cursor-pointer"
+       (click)="toggleFilter()"
+  >
+    <span class="search-text p-4">{{searchInfo.city}}</span>
+    <span class="search-text text-gray-2 p-4">{{searchInfo.totalGuests}} guests</span>
+    <span class="material-icons text-orange-1 p-4">search</span>
+  </div>
+
+</div>

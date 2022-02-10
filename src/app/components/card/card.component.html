@@ -1,0 +1,17 @@
+<div class="flex flex-col">
+
+  <img src="{{stays.photo}}" alt="house-picture" class="rounded-3xl h-72 object-cover">
+
+  <div class="flex justify-between items-center mt-4 mb-4">
+    <div class="superhost" *ngIf="stays.superHost">SUPER HOST</div>
+    <span class="text-gray-1 text-xs">{{stays.type}}</span>
+    <span class="text-gray-1 text-xs" *ngIf="stays.beds">{{stays.beds}} beds</span>
+    <div class="flex items-center">
+      <span class="material-icons text-lg text-orange-1">star</span>
+      <span class="text-xs text-black-2">{{stays.rating}}</span>
+    </div>
+  </div>
+
+  <span class="font-semibold text-black-1">{{stays.title}}</span>
+
+</div>
